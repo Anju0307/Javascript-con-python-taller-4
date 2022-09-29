@@ -2,21 +2,19 @@ addEventListener("DOMContentLoaded", (e)=>{
     let form = document.querySelector("#form");
     form.addEventListener("submit" , (e)=>{
         e.preventDefault();
-        let angulo = document.querySelector("#angulo").value;
-        let serie = document.querySelector("#serie").value;
-        let res=0,num=3,facto=1;
-        for (let i=1; i<=serie;i++){
-            for (let j=1;j<=num;j++){
-                facto *= j; 
-            }   
-            if (i%2==0){
-                res+=(angulo*num)/facto;
-                num+=2;
-            } else{
-                res-=(angulo*num)/facto; 
-                num+=2;
-            }        
+        let numeros = document.querySelector("#numeros").value;
+        let numero = parseInt(prompt(`Ingrese el numero 1`));
+        let suma=numero,resta=numero,multi=numero,divi=numero;
+        for (let i=1; i<numeros;i++){
+            let numero2 = parseInt(prompt(`Ingrese el numero ${i+1}`));
+            suma += numero2;
+            resta -= numero2;
+            multi *= numero2;
+            divi /= numero2;
         }
-        alert(`El seno del angulo ${angulo} es ${res}`);
+        alert(`El resultado de la suma es de ${suma}`);
+        alert(`El resultado de la resta es de ${resta}`);
+        alert(`El resultado de la multiplicacion es de ${multi}`);
+        alert(`El resultado de la division es de ${divi}`);
     })
 })
