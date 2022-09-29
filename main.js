@@ -1,19 +1,14 @@
-addEventListener("DOMContentLoaded", (e)=>{
+addEventListener("DOMContentLoaded", (e) => {
     let form = document.querySelector("#form");
-    form.addEventListener("submit" , (e)=>{
+    form.addEventListener("submit", (e) => {
         e.preventDefault();
-        const iva=0.16,descuento=0.15,precio = 100000;
-        let total=0;
-        let cantidad = document.querySelector("#cantitad").value;
-        for (let i=1; i<=cantidad;i++){
-            total+=precio;
+        let serie = document.querySelector("#serie").value;
+        let serie1=0,serie2=0;
+        for (let i = 1; i <= serie; i++) {
+            serie1 += Math.pow(i, 2);
+            serie2 += Math.pow(i, i);
         }
-        let totalPagar= total+(total*iva);
-        if (totalPagar>500000){
-            let totalDesc = totalPagar-(totalPagar*descuento);
-            alert(`El total a pagar es de ${totalDesc}`);
-        } else {
-            alert(`El total a pagar es de ${totalPagar} `);
-        }
+        alert(`El resultado de la serie 1 es ${serie1} `);
+        alert(`El resultado de la serie 2 es ${serie2} `);
     })
 })
