@@ -2,20 +2,18 @@ addEventListener("DOMContentLoaded", (e)=>{
     let form = document.querySelector("#form");
     form.addEventListener("submit" , (e)=>{
         e.preventDefault();
-        let ventas= document.querySelector("#ventas").value;
-        let menores=0,medianas=0,mayores=0;
-        for (let i=1 ; i<=ventas ; i++){
-            let precio = parseInt(prompt("Digite el precio de la venta"));
-            if (precio<500){
-                menores++;
-            } else if (precio>500 && precio < 1000){
-                medianas++;
+        let trabajadores = document.querySelector("#trabajadores").value;
+        for (let i=1; i<=trabajadores;i++){
+            let tiempo = parseInt(prompt("Ingrese el tiempo que lleva en la empresa"));
+            if (tiempo>0 && tiempo<=5){
+                alert("Se le aumenta 100 pesos");
+            } else if (tiempo >5 && tiempo<=10 ){
+                alert("Se aumentara 250 pesos");
+            } else if (tiempo >10 && tiempo<=20 ){
+                alert("Se aumentara 400 pesos");
             } else {
-                mayores++;
+                alert("Se aumentara 550 pesos");
             }
         }
-        alert(`La cantidad de ventas menores a 500 son ${menores} `);
-        alert(`La cantidad de ventas menores a 1000 pero mayores a 500 son ${medianas} `);
-        alert(`La cantidad de ventas mayores a 1000 son ${mayores} `);
     })
 })
