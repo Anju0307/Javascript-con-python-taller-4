@@ -2,22 +2,10 @@ addEventListener("DOMContentLoaded", (e)=>{
     let form = document.querySelector("#form");
     form.addEventListener("submit" , (e)=>{
         e.preventDefault();
-        let estudiantes = document.querySelector("#estudiantes").value;
-        let notaFinal=0,menor=10,mayor=0;
-        for (let i=1; estudiantes>=i ;i++){
-            let calificacion = parseInt(prompt("Ingrese la calificacion de la cafeteria"));
-            notaFinal= notaFinal+calificacion;
-            if (calificacion>mayor){
-                mayor= calificacion;
-            } else if (calificacion<menor) {
-                menor = calificacion;
-            } else{
-                menor= calificacion;
-            }
+        let pago=10;
+        for (let i=1;i<=20;i++){
+            alert(`El mes ${i} debe pagar ${pago}`);
+            pago*=2;
         }
-        let pro = notaFinal/estudiantes;
-        alert(`La calificacion mayor es de ${mayor}`);
-        alert(`La calificacion menor es de ${menor}`);
-        alert(`El promedio es de ${pro}`);
     })
 })
